@@ -11,23 +11,33 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
 
     private static Rollet rollet = new Rollet();
     private TextView tv_total_price;
-
-    private EditText ed_width;
+    private TextInputEditText textInputEditText_width;
+    private TextInputEditText textInputEditText_height;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ed_width = findViewById(R.id.ed_width);
+        textInputEditText_width = (TextInputEditText) findViewById(R.id.inputEditText_width);
+        textInputEditText_height = (TextInputEditText) findViewById(R.id.inputEditText_height);
+    }
 
-        //rollet.constractRollet(ed_width.getText(), );
+    public void showTotalPrice(View view) {
+        rollet.constractRollet(
+                Integer.parseInt(textInputEditText_width.getText().toString()),
+                Integer.parseInt(textInputEditText_height.getText().toString()),
+                1,
+                true,
+                true,
+                2
+        );
 
         tv_total_price.setText(rollet.getTotalPrice());
     }
-    
 }

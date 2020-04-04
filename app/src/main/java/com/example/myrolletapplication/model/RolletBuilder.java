@@ -24,13 +24,13 @@ public class RolletBuilder implements IRolletBuilder {
     private double area;             // площадь
 
     public RolletBuilder(double width, double height, int installation, boolean radioModule, boolean emergencyUnlock, int controller) {
-        this.width = width;
-        this.height = height;
-        this.installation = installation;
-        this.radioModule = radioModule;
+        this.width           = width;
+        this.height          = height;
+        this.installation    = installation;
+        this.radioModule     = radioModule;
         this.emergencyUnlock = emergencyUnlock;
-        this.controller = controller;
-        area = width / 1000 * height / 1000 + width / 1000 * height / 1000 * installation * 0.3;
+        this.controller      = controller;
+        area                 = width / 1000 * height / 1000 + width / 1000 * height / 1000 * installation * 0.3;
     }
 
     @Override
