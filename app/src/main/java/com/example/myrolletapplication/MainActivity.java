@@ -16,8 +16,8 @@ import com.google.android.material.textfield.TextInputEditText;
 public class MainActivity extends AppCompatActivity {
 
     private static Rollet rollet = new Rollet();
-    private TextView tv_total_price;
-    private TextView priceOneSquareMeter;
+    private TextView textViewTotalPrice;
+    private TextView textViewPriceOneSquareMeter;
     private TextInputEditText textInputEditText_width;
     private TextInputEditText textInputEditText_height;
 
@@ -27,18 +27,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textInputEditText_width = findViewById(R.id.inputEditText_width);
         textInputEditText_height = findViewById(R.id.inputEditText_height);
-        priceOneSquareMeter = findViewById(R.id.priceOneSquareMeter);
+        textViewPriceOneSquareMeter = findViewById(R.id.priceOneSquareMeter);
+        textViewTotalPrice = findViewById(R.id.total_price);
     }
 
-    public void showTotalPrice(View view) throws NullPointerException {
-            rollet.constractRollet(
-                Integer.parseInt(textInputEditText_width.getText().toString()),
-                Integer.parseInt(textInputEditText_height.getText().toString()),
-                1,
-                true,
-                true,
-                2
-            );
-        priceOneSquareMeter.setText(rollet.getArea());
+    public void showTotalPrice(View view) {
+        rollet.constractRollet(
+            Integer.parseInt(textInputEditText_width.getText().toString()),
+            Integer.parseInt(textInputEditText_height.getText().toString()),
+            1,
+            true,
+            true,
+            2
+        );
+        textViewPriceOneSquareMeter.setText(rollet.getArea());
+        textViewTotalPrice.setText(rollet.getTotalPrice());
     }
 }
