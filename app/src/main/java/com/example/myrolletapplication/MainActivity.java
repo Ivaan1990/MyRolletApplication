@@ -16,8 +16,8 @@ import com.google.android.material.textfield.TextInputEditText;
 public class MainActivity extends AppCompatActivity {
 
     private static Rollet rollet = new Rollet();
-    private TextView textViewTotalPrice;
-    private TextView textViewPriceOneSquareMeter;
+    private TextView          textViewTotalPrice;
+    private TextView          textViewPriceOneSquareMeter;
     private TextInputEditText textInputEditText_width;
     private TextInputEditText textInputEditText_height;
 
@@ -25,10 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textInputEditText_width = findViewById(R.id.inputEditText_width);
-        textInputEditText_height = findViewById(R.id.inputEditText_height);
-        textViewPriceOneSquareMeter = findViewById(R.id.priceOneSquareMeter);
-        textViewTotalPrice = findViewById(R.id.total_price);
+        initGUI();
     }
 
     public void showTotalPrice(View view) {
@@ -42,5 +39,15 @@ public class MainActivity extends AppCompatActivity {
         );
         textViewPriceOneSquareMeter.setText(rollet.getArea());
         textViewTotalPrice.setText(rollet.getTotalPrice());
+    }
+
+    /**
+     * Метод инициализации всех пользовательских кнопок/полей/etc
+     */
+    public void initGUI(){
+        textInputEditText_width = findViewById(R.id.inputEditText_width);
+        textInputEditText_height = findViewById(R.id.inputEditText_height);
+        textViewPriceOneSquareMeter = findViewById(R.id.priceOneSquareMeter);
+        textViewTotalPrice = findViewById(R.id.total_price);
     }
 }

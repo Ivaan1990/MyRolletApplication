@@ -12,6 +12,7 @@ public class Rollet {
                                 boolean radioModule,
                                 boolean emergencyUnlock,
                                 int controller) {
+
         rolletBuilder = new RolletBuilder(width, height, installation, radioModule, emergencyUnlock, controller);
     }
 
