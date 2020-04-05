@@ -10,7 +10,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEditText_width"
-                android:text="@string/text_width"
+                android:tooltipText="@string/text_width"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -18,14 +18,22 @@
                 android:id="@+id/inputEditText_height"
                 android:layout_width="118dp"
                 android:layout_height="wrap_content"/>
+
         <TextView
+                android:gravity="center_vertical"
                 android:id="@+id/total_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="330dp"
+                android:layout_height="721dp"
                 android:text="@string/total_price"/>
+        <TextView
+                android:id="@+id/priceOneSquareMeter"
+                android:layout_width="100dp"
+                android:layout_height="25dp"/>
+
         <Button
                 android:id="@+id/textview_totalPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/calculate_button_text"
                 android:onClick="showTotalPrice"/>
-</>
+</TableLayout>

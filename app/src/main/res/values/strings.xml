@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">MyRolletApplication</string>
+    <string name="app_name">AndroidRolletsApplication</string>
     <string name="action_settings">Settings</string>
     <string name="total_price">Окончательная цена</string>
     <string name="text_width">Высота</string>
+    <string name="priceOneSquareMeter">Цена за 1-ин квадрантный метр</string>
+    <string name="calculate_button_text">Рассчитать</string>
 </resources>

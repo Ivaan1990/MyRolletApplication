@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static Rollet rollet = new Rollet();
     private TextView tv_total_price;
+    private TextView priceOneSquareMeter;
     private TextInputEditText textInputEditText_width;
     private TextInputEditText textInputEditText_height;
 
@@ -24,20 +25,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textInputEditText_width = (TextInputEditText) findViewById(R.id.inputEditText_width);
-        textInputEditText_height = (TextInputEditText) findViewById(R.id.inputEditText_height);
+        textInputEditText_width = findViewById(R.id.inputEditText_width);
+        textInputEditText_height = findViewById(R.id.inputEditText_height);
+        priceOneSquareMeter = findViewById(R.id.priceOneSquareMeter);
     }
 
-    public void showTotalPrice(View view) {
-        rollet.constractRollet(
+    public void showTotalPrice(View view) throws NullPointerException {
+            rollet.constractRollet(
                 Integer.parseInt(textInputEditText_width.getText().toString()),
                 Integer.parseInt(textInputEditText_height.getText().toString()),
                 1,
                 true,
                 true,
                 2
-        );
-
-        tv_total_price.setText(rollet.getTotalPrice());
+            );
+        priceOneSquareMeter.setText(rollet.getArea());
     }
 }

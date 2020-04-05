@@ -19,8 +19,8 @@ public class Rollet {
         return String.valueOf(rolletBuilder.totalPrice());
     }
 
-    public double getArea() {
-        return rolletBuilder.getArea();
+    public String getArea() {
+        return String.valueOf(rolletBuilder.getArea());
     }
 
     public int getPriceForOneSquareMeter(){
